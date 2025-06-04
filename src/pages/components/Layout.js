@@ -4,8 +4,10 @@ import Header from "./Header";
 export default function Layout({ children }) {
   return (
     <>
-      <Header />
-      <main>{children}</main>
+      <div className="mx-auto w-[720px]">
+        <Header />
+        <main>{children}</main>
+      </div>
       <Footer />
     </>
   );
