@@ -26,9 +26,26 @@
   padding: 0;
   list-style: none;
   font-family: "GmarketSans", sans-serif;
+  box-sizing: border-box;
 }
 
 a {
   text-decoration: none !important;
   color: #0f1010 !important;
+}
+
+@layer utilities {
+  .animate-blink {
+    animation: blink-caret 0.9s ease-in-out infinite;
+  }
+
+  @keyframes blink-caret {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
 }

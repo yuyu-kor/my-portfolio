@@ -1,46 +1,75 @@
-import Link from "next/link";
+import Image from "next/image";
+import Banner from "./components/Banner";
 
 export default function Home() {
   return (
-    <div>
-      <div className="mt-5 flex items-center justify-between font-light">
-        <div className="text-left">
-          <p className="text-4xl font-medium leading-relaxed">
-            안녕하세요!
-            <br />
-            배우는 걸 좋아하는
-            <br />
-            ENTP 이유진입니다.
-          </p>
-        </div>
-        <img
-          src="/profile1.png"
-          alt="프로필사진"
-          width={380}
-          className="ml-10"
-        />
-        <div className="flex flex-col justify-between items-end absolute right-60 gap-3 font-medium">
-          <Link href="/about">github</Link>
-          <Link href="/about">youtube</Link>
-          <Link href="/about">instagram</Link>
-          <Link href="/about">resume</Link>
-        </div>
-      </div>
+    <>
+      <Banner />
       <div>
-        <div
-          className="p-2 text-xl w-fit"
-          style={{
-            border: "1px solid rgb(60, 61, 64)",
-            color: "rgb(60, 61, 64)",
-          }}
-        >
+        {/* recent posts */}
+        <div className="p-2 text-xl w-fit border !border-gray-900 text-gray-700">
           Recent Posts
         </div>
-        <div>
-          <img />
+        <div className="mt-4 text-lg flex items-center gap-3">
+          <Image
+            src="/3d-box.png"
+            alt="프로필"
+            width={60}
+            height={60}
+            className="bg-gray-100 rounded-full p-1"
+          />
           <p>번들러가 RSC를 지원한다고? Parcel과 함께하는 SSR</p>
+          <p className="text-sm text-gray-500 font-light">2025.06.06</p>
+        </div>
+
+        {/* Case Study */}
+        <div className="p-2 text-xl w-fit border !border-zinc-700 text-white bg-zinc-700 mt-5">
+          Case Study
+        </div>
+        <div className="mt-4 text-lg flex items-center gap-3">
+          <Image
+            src="/3d-box.png"
+            alt="프로필"
+            width={60}
+            height={60}
+            className="bg-gray-100 rounded-full p-1"
+          />
+          <p>번들러가 RSC를 지원한다고? Parcel과 함께하는 SSR</p>
+          <p className="text-sm text-gray-500 font-light">2025.06.06</p>
+        </div>
+
+        {/* EXPERIENCE */}
+        <div className="p-2 text-xl w-fit border !border-zinc-700 text-white bg-zinc-700 mt-5">
+          EXPERIENCE
+        </div>
+        <div className="mt-4 text-lg flex items-center gap-3">
+          <Image
+            src="/3d-box.png"
+            alt="프로필"
+            width={60}
+            height={60}
+            className="bg-gray-100 rounded-full p-1"
+          />
+          <p>번들러가 RSC를 지원한다고? Parcel과 함께하는 SSR</p>
+          <p className="text-sm text-gray-500 font-light">2025.06.06</p>
+        </div>
+
+        {/* LIFE */}
+        <div className="p-2 text-xl w-fit border !border-zinc-700 text-white bg-zinc-700 mt-5">
+          LIFE
+        </div>
+        <div className="mt-4 text-lg flex items-center gap-3">
+          <Image
+            src="/3d-box.png"
+            alt="프로필"
+            width={60}
+            height={60}
+            className="bg-gray-100 rounded-full p-1"
+          />
+          <p>번들러가 RSC를 지원한다고? Parcel과 함께하는 SSR</p>
+          <p className="text-sm text-gray-500 font-light">2025.06.06</p>
         </div>
       </div>
-    </div>
+    </>
   );
 }
