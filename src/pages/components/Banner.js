@@ -43,7 +43,7 @@ export default function () {
       </div>
 
       {/* 연락처 정보 */}
-      <div className="-translate-y-18">
+      <div className="-translate-y-20">
         <p className="font-light text-sm">
           <span className="font-medium">Email.</span> yjlee462611@gmail.com
           <br />
