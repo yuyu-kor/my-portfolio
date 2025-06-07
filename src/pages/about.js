@@ -1,7 +1,7 @@
 "use client";
 
+import Banner from "@/components/Banner";
 import { useEffect, useRef, useState } from "react";
-import Banner from "./components/Banner";
 
 const experience = [
   {

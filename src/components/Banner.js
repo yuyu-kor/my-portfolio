@@ -1,5 +1,5 @@
 import Link from "next/link";
-import TypingText from "./TypingText";
+import TypingText from "@/hooks/animation/TypingText";
 
 export default function () {
   return (
