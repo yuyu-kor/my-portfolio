@@ -125,7 +125,7 @@ export default function About() {
         <div className="relative">
           <div className="absolute left-[174px] top-0 bottom-4 w-[1px] bg-zinc-300" />
 
-          <div className="flex flex-col space-y-10">
+          <div className="flex flex-col !space-y-6">
             {experience.map((exp, i) => (
               <div
                 key={i}
@@ -154,7 +154,7 @@ export default function About() {
       {/* ✅ Certificate Section with Animation */}
       <section
         ref={certificateRef}
-        className={`!pt-15 max-w-5xl mx-auto flex flex-col items-center transition-all duration-700 ease-in-out transform ${
+        className={`!pt-20 max-w-5xl mx-auto flex flex-col items-center transition-all duration-700 ease-in-out transform ${
           certificateVisible
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-8"
