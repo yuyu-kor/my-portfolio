@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
     "babel-plugin-styled-components": "^2.1.4",
     "bootstrap": "^5.3.6",
     "date-fns": "^4.1.0",

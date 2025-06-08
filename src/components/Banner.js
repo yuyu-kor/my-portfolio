@@ -3,7 +3,7 @@ import TypingText from "@/hooks/animation/TypingText";
 
 export default function () {
   return (
-    <div className="relative px-10 py-10 mt-3 mb-5">
+    <div className="relative mt-3 mb-5">
       <div className="flex items-center justify-between gap-10 font-light">
         {/* 타이핑 텍스트 */}
         <div className="flex-1 min-w-[300px] z-10">
