@@ -32,7 +32,7 @@ export default function Home({
 }) {
   const PostItem = ({ post }) => (
     <Link href={`/posts/${post.slug}`} className="block">
-      <div className="mt-4 text-lg flex items-center gap-3 p-2 rounded-md hover:bg-gray-100 transition cursor-pointer">
+      <div className="mt-2 text-lg flex items-center gap-3 p-2 rounded-md hover:bg-gray-100 transition cursor-pointer">
         <Image
           src={post.thumbnail || "/3d-box.png"}
           alt="썸네일"
@@ -51,7 +51,7 @@ export default function Home({
       <Banner />
       <div>
         {/* Recent Posts */}
-        <div className="p-2 text-xl w-fit border !border-gray-900 text-gray-700">
+        <div className="mb-4 p-2 text-xl w-fit border !border-gray-900 text-gray-700">
           Recent Posts
         </div>
         {recentPosts.map((post) => (
@@ -59,7 +59,7 @@ export default function Home({
         ))}
 
         {/* Case Study */}
-        <div className="p-2 text-xl w-fit border !border-zinc-700 text-white bg-zinc-700 mt-5">
+        <div className="mb-4 p-2 text-xl w-fit border !border-zinc-700 text-white bg-zinc-700 mt-5">
           Case Study
         </div>
         {marketingPosts.map((post) => (
@@ -67,7 +67,7 @@ export default function Home({
         ))}
 
         {/* LIFE */}
-        <div className="p-2 text-xl w-fit border !border-zinc-700 text-white bg-zinc-700 mt-5">
+        <div className="mb-4 p-2 text-xl w-fit border !border-zinc-700 text-white bg-zinc-700 mt-5">
           LIFE
         </div>
         {experiencePosts.map((post) => (

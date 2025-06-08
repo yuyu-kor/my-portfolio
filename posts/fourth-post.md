@@ -1,7 +1,7 @@
 ---
 title: "컴포넌트 재사용성을 고려한 UI 설계 전략"
 date: "2025-06-08"
-category: "Dev"
+category: "Experience"
 thumbnail: "/posts-thumbnail/3d-discount.png"
 ---
 
