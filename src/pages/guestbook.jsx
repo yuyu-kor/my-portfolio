@@ -13,7 +13,7 @@ export default function Guestbook() {
           자유롭게 방명록을 작성해주세요-!
         </p>
         <p className="text-center font-light text-gray-600 pt-5">
-          total: {messageCount}
+          {messageCount} comments
         </p>
         <GuestbookForm />
         <GuestbookList setMessageCount={setMessageCount} />

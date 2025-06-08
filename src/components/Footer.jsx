@@ -39,6 +39,7 @@ export default function Footer() {
         transform: isVisible ? "translateY(0)" : "translateY(20px)",
         transition: "opacity 0.6s ease, transform 0.6s ease",
         marginTop: "80px",
+        fontWeight: "300",
       }}
     >
       © Powered by yuyu

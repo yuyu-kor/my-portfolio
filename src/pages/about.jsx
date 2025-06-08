@@ -6,23 +6,23 @@ import { useEffect, useRef, useState } from "react";
 const experience = [
   {
     date: "2024.03 - NOW",
-    company: "BGN 밝은눈안과 (홍보팀)",
+    company: "안과 (홍보팀)",
     role: "콘텐츠 기획 및 B2B 온·오프라인 홍보",
   },
   {
-    date: "2025.07 - 2025.07",
+    date: "2025.06 - 2025.06",
     company: "GA4 / SQL 단기 집중 학습",
     role: "데이터 기반 마케팅 인사이트 분석 역량 강화",
   },
   {
-    date: "2025.04 - 2025.06",
+    date: "2025.04 - 2025.05",
     company: "웹디자인 독학",
     role: "Figma, AI툴을 활용한 UI/UX 디자인 기초 학습 및 시안안 제작",
   },
   {
     date: "2025.02 - 2025.06",
     company: "프론트엔드 독학 및 스터디 참여",
-    role: "HTML, CSS, JavaScript, React, Next.js 실습 및 팀 프로젝트 수행",
+    role: "HTML/CSS, JS, React, Next, Firebase 실습 및 팀 프로젝트 수행",
   },
   {
     date: "2023.12 - 2024.02",
@@ -37,7 +37,7 @@ const experience = [
   {
     date: "2020.11 - 2022.11",
     company: "엔터테인먼트 영상편집 & 게임 방송 프리랜서",
-    role: "프리미어프로로 활용 영상 콘텐츠 제작 및 스트리밍 운영",
+    role: "프리미어프로 활용 간단한 영상 콘텐츠 제작 및 스트리밍 운영",
   },
 ];
 
@@ -192,7 +192,7 @@ export default function About() {
               alt="GA4 수료증"
               className="w-full h-auto object-contain rounded-lg mb-3 max-h-[220px]"
             />
-            <p className="text-sm text-gray-700">GA4 실무 인증 (2025.07)</p>
+            <p className="text-sm text-gray-700">GA4 실무 인증 (2025.06)</p>
           </div>
         </div>
       </section>
