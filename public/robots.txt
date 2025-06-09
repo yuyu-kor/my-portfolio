@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://my-portfolio-lovat-nine-85.vercel.app/
+
+# Sitemaps
+Sitemap: https://my-portfolio-lovat-nine-85.vercel.app/sitemap.xml
