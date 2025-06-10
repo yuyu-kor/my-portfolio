@@ -121,13 +121,16 @@ export default function GuestbookList({ setMessageCount }) {
                   key={msg.id}
                   className="bg-white border border-neutral-200 rounded-lg p-4 shadow-sm basis-0 flex-1 min-w-0"
                 >
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-md font-medium text-neutral-800">
+                  <div className="flex items-center justify-between mb-1 flex-nowrap overflow-hidden">
+                    <span
+                      className="text-md font-medium text-neutral-800 truncate max-w-[70%]"
+                      title={msg.nickname}
+                    >
                       {msg.nickname || "익명"}
                     </span>
                     <button
                       onClick={() => handleDelete(msg.id)}
-                      className="!text-sm text-red-400 hover:text-red-600 transition"
+                      className="!text-sm text-red-400 hover:text-red-600 transition whitespace-nowrap ml-2 shrink-0"
                     >
                       삭제
                     </button>
