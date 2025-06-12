@@ -1,11 +1,23 @@
 import Banner from "@/components/Banner";
 import Image from "next/image";
-import { getSortedPostsData } from "@/lib/posts";
 import Link from "next/link";
 import SeoHead from "@/components/SeoHead";
+import { getDatabase } from "@/lib/notion";
 
 export async function getStaticProps() {
-  const allPosts = getSortedPostsData();
+  const notionPosts = await getDatabase();
+
+  // Notion에서 가져온 데이터 정리
+  const allPosts = notionPosts.map((post) => {
+    return {
+      id: post.id,
+      title: post.properties?.Title?.title?.[0]?.plain_text || "제목 없음",
+      slug: post.properties?.Slug?.rich_text?.[0]?.plain_text || post.id,
+      date: post.properties?.Date?.date?.start || "",
+      thumbnail: post.properties?.Thumbnail?.files?.[0]?.file?.url || "",
+      category: post.properties?.Category?.select?.name || "Uncategorized",
+    };
+  });
 
   const recentPosts = allPosts.slice(0, 3);
 
@@ -23,6 +35,7 @@ export async function getStaticProps() {
       marketingPosts,
       experiencePosts,
     },
+    revalidate: 60,
   };
 }
 
@@ -32,7 +45,7 @@ export default function Home({
   experiencePosts = [],
 }) {
   const PostItem = ({ post }) => (
-    <Link href={`/posts/${post.slug}`} className="block">
+    <Link href={`/posts/${post.slug}`}>
       <div className="mt-2 text-lg flex items-center gap-3 p-2 rounded-md hover:bg-gray-100 transition cursor-pointer">
         <Image
           src={post.thumbnail || "/3d-box.png"}

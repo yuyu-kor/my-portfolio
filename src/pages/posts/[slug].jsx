@@ -1,102 +1,54 @@
-import { getPostData, getSortedPostsData } from "@/lib/posts";
-import { remark } from "remark";
-import html from "remark-html";
-import { formatDate } from "@/lib/date";
-import Image from "next/image";
-import Head from "next/head";
+import { NotionAPI } from "notion-client";
+import { getDatabase } from "@/lib/notion";
+import { NotionRenderer } from "react-notion-x";
+import "react-notion-x/src/styles.css";
+
+const notion = new NotionAPI();
 
 export async function getStaticPaths() {
-  const posts = getSortedPostsData();
-  const paths = posts.map((post) => ({
-    params: { slug: post.slug },
-  }));
+  const posts = await getDatabase();
 
-  return {
-    paths,
-    fallback: false,
-  };
+  const paths = posts
+    .map((post) => {
+      const slug = post.properties?.Slug?.rich_text?.[0]?.plain_text;
+      console.log("📌 정적 생성할 슬러그:", slug); // ✅ 이 줄
+      if (!slug) return null;
+      return { params: { slug } };
+    })
+    .filter(Boolean);
+
+  return { paths, fallback: "blocking" };
 }
 
 export async function getStaticProps({ params }) {
-  const post = getPostData(params.slug);
-  const processedContent = await remark().use(html).process(post.content);
-  const contentHtml = processedContent.toString();
+  console.log("🟡 요청된 slug:", params.slug); // 🔥 꼭 확인!
 
-  return {
-    props: {
-      post: {
-        ...post,
-        contentHtml,
-      },
-    },
-  };
+  const posts = await getDatabase();
+
+  const page = posts.find(
+    (post) => post.properties?.Slug?.rich_text?.[0]?.plain_text === params.slug
+  );
+
+  if (!page) {
+    console.warn("❌ 페이지를 못 찾음:", params.slug);
+    return { notFound: true };
+  }
+
+  const rawPageId = page.id.replace(/-/g, "");
+
+  try {
+    const recordMap = await notion.getPage(rawPageId);
+    return { props: { recordMap }, revalidate: 60 };
+  } catch (err) {
+    console.error("❌ Notion getPage 에러:", err.message);
+    return { notFound: true };
+  }
 }
 
-export default function PostDetail({ post }) {
+export default function PostPage({ recordMap }) {
   return (
-    <>
-      <Head>
-        <title>{post.title} | Yuyu’s Blog</title>
-        <meta
-          name="description"
-          content={post.description || post.content.slice(0, 100)}
-        />
-        <meta property="og:title" content={post.title} />
-        <meta
-          property="og:description"
-          content={post.description || post.content.slice(0, 100)}
-        />
-        <meta property="og:image" content={post.thumbnail || "/og-image.png"} />
-        <meta
-          property="og:url"
-          content={`https://my-portfolio.vercel.app/posts/${post.slug}`}
-        />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.title} />
-        <meta
-          name="twitter:description"
-          content={post.description || post.content.slice(0, 100)}
-        />
-        <meta
-          name="twitter:image"
-          content={post.thumbnail || "/og-image.png"}
-        />
-      </Head>
-      <div className="max-w-3xl mx-auto py-14">
-        {/* 썸네일 */}
-        {post.thumbnail && (
-          <div className="mb-8 w-16 h-16 relative">
-            <Image
-              src={post.thumbnail}
-              alt="썸네일"
-              width={70}
-              height={70}
-              className="rounded-xl object-cover"
-            />
-          </div>
-        )}
-
-        {/* 카테고리 */}
-        {post.category && (
-          <div className="text-sm text-gray-400 mb-2">{post.category}</div>
-        )}
-
-        {/* 제목 */}
-        <h3 className="text-gray-900 mb-2 leading-snug">{post.title}</h3>
-
-        {/* 날짜 */}
-        <p className="text-sm font-light text-gray-500 mb-8 text-right">
-          {formatDate(post.date)}
-        </p>
-
-        {/* 본문 */}
-        <hr className="!mb-15 !border-gray-400" />
-        <article
-          className="prose prose-neutral max-w-none"
-          dangerouslySetInnerHTML={{ __html: post.contentHtml }}
-        />
-      </div>
-    </>
+    <div className="max-w-3xl mx-auto px-4 py-8">
+      <NotionRenderer recordMap={recordMap} fullPage={true} darkMode={false} />
+    </div>
   );
 }
