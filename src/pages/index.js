@@ -63,7 +63,7 @@ export default function Home({
   return (
     <>
       <SeoHead
-        title="About | yuyu 포트폴리오"
+        title="yuyu's portfolio"
         description="마케터이자 프론트엔드 개발자인 이유진(yuyu)의 이력과 학습 여정을 소개합니다."
       />
       <Banner />
