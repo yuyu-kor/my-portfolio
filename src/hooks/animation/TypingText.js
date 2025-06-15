@@ -49,7 +49,7 @@ const TypingText = () => {
       <span className="animate-blink">|</span>
       <br />
       <span className="whitespace-nowrap">
-        트렌드러버 <strong>{text2}</strong>
+        신입마케터 <strong>{text2}</strong>
         <span className="animate-blink">|</span>입니다.
       </span>
     </div>

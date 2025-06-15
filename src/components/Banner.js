@@ -44,9 +44,10 @@ export default function () {
 
       {/* 연락처 정보 */}
       <div className="-translate-y-20">
-        <p className="font-light text-sm">
+        <p className="font-light text-sm !mb-1">
           <span className="font-medium">Email.</span> yjlee462611@gmail.com
-          <br />
+        </p>
+        <p className="font-light text-sm">
           <span className="font-medium">Residence.</span> Seoul, South Korea
         </p>
       </div>
