@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <div className="h-[60px] flex items-center justify-between text-[17px] font-bold mt-1.5">
       <Link href="/">
-        <h1 className="!text-[17px] !font-bold mt-2 relative group">
+        <h1 className="!text-[17px] mt-2 relative group !font-bold">
           yuyu.com
           <span className="block absolute bottom-[-2px] left-0 w-0 h-[2px] bg-black transition-all duration-200 group-hover:w-full" />
         </h1>

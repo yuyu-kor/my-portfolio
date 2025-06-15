@@ -40,6 +40,7 @@ export default function Footer() {
         transition: "opacity 0.6s ease, transform 0.6s ease",
         marginTop: "80px",
         fontWeight: "300",
+        color: "#6B7280",
       }}
     >
       © Powered by yuyu

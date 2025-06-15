@@ -52,10 +52,10 @@ export default function Home({
           alt="썸네일"
           width={48}
           height={48}
-          className="w-15 h-15 rounded-full object-contain bg-gray-100 p-2"
+          className="w-13 h-13 rounded-full object-contain bg-gray-100 p-1"
         />
-        <p className="m-0">{post.title}</p>
-        <p className="text-sm text-gray-500 font-light m-0">{post.date}</p>
+        <p className="m-0 text-gray-800 text-[18px]">{post.title}</p>
+        <p className="text-sm text-gray-400 font-light m-0">{post.date}</p>
       </div>
     </Link>
   );

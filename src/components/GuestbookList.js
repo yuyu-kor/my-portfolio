@@ -75,7 +75,7 @@ export default function GuestbookList({ setMessageCount }) {
         <button
           ref={prevRef}
           disabled={activeIndex === 0}
-          className={`text-xl px-2 transition ${
+          className={`!text-2xl px-2 transition ${
             activeIndex === 0
               ? "text-gray-300 cursor-not-allowed opacity-50"
               : "text-gray-500 hover:text-black"
@@ -86,7 +86,7 @@ export default function GuestbookList({ setMessageCount }) {
         <button
           ref={nextRef}
           disabled={activeIndex === totalSlides - 1}
-          className={`text-xl px-2 transition ${
+          className={`!text-2xl px-2 transition ${
             activeIndex === totalSlides - 1
               ? "text-gray-300 cursor-not-allowed opacity-50"
               : "text-gray-500 hover:text-black"
