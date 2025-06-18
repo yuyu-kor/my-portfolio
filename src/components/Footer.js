@@ -25,22 +25,11 @@ export default function Footer() {
   return (
     <div
       ref={footerRef}
+      className={`w-full text-center h-[40px] md:h-[62px] md:mt-20 mt-10 text-[12px] md:text-sm font-light text-gray-500 relative flex items-center justify-center transform transition-all duration-600 ease-in-out ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+      }`}
       style={{
-        width: "100%",
-        textAlign: "center",
         background: "linear-gradient(to bottom, #E4E7EB, #F7F8FA)",
-        height: "62px",
-        fontSize: "14px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        position: "relative",
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateY(0)" : "translateY(20px)",
-        transition: "opacity 0.6s ease, transform 0.6s ease",
-        marginTop: "80px",
-        fontWeight: "300",
-        color: "#6B7280",
       }}
     >
       © Powered by yuyu

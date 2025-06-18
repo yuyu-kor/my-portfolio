@@ -42,7 +42,7 @@ const TypingText = () => {
   const text2 = useTypingEffect(["이유진", "yuyu"]);
 
   return (
-    <div className="text-left text-4xl leading-12 whitespace-nowrap overflow-visible z-10">
+    <div className="text-left md:text-4xl text-2xl md:leading-12 leading-8 whitespace-nowrap overflow-visible z-10">
       안녕하세요!
       <br />
       <strong>{text1}</strong>

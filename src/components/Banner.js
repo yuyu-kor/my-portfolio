@@ -3,7 +3,7 @@ import TypingText from "@/hooks/animation/TypingText";
 
 export default function () {
   return (
-    <div className="relative mt-3 mb-5">
+    <div className="relative md:mt-3 mt-10 md:mb-5 mb-17">
       <div className="flex items-center justify-between gap-10 font-light">
         {/* 타이핑 텍스트 */}
         <div className="flex-1 min-w-[300px] z-10">
@@ -11,7 +11,7 @@ export default function () {
         </div>
 
         {/* 프로필 이미지 */}
-        <div className="shrink-0 translate-x-12">
+        <div className="shrink-0 translate-x-12 md:block hidden">
           <img
             src="/profile1.png"
             alt="프로필사진"
@@ -21,7 +21,7 @@ export default function () {
         </div>
 
         {/* 세로 링크 정렬 */}
-        <div className="flex flex-col items-end gap-3 font-light text-gray-600 z-10 -translate-x-20">
+        <div className="flex flex-col items-end gap-3 font-light text-gray-600 z-10 md:-translate-x-20 -translate-x-18">
           {[
             { label: "blog", href: "https://yuyu0629.tistory.com/" },
             { label: "github", href: "https://github.com/yuyu-kor" },
@@ -43,11 +43,11 @@ export default function () {
       </div>
 
       {/* 연락처 정보 */}
-      <div className="-translate-y-20">
-        <p className="font-light text-sm !mb-1">
+      <div className="md:-translate-y-20 translate-y-5">
+        <p className="font-light md:text-sm text-xs !mb-1">
           <span className="font-medium">Email.</span> yjlee462611@gmail.com
         </p>
-        <p className="font-light text-sm">
+        <p className="font-light md:text-sm text-xs">
           <span className="font-medium">Residence.</span> Seoul, South Korea
         </p>
       </div>

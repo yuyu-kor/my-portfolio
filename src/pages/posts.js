@@ -98,10 +98,10 @@ export default function PostsPage({ posts }) {
       />
 
       <div className="w-full max-w-[720px] mx-auto mt-14 text-center">
-        <h2 className="text-xl font-semibold text-gray-900 mb-2">
+        <p className="md:text-3xl text-2xl text-gray-900 mb-2">
           {selectedCategory}
-        </h2>
-        <p className="text-lg text-gray-500 mt-3 mb-6 font-light">
+        </p>
+        <p className="md:text-lg text-md text-gray-500 mt-3 mb-6 font-light">
           {filteredPosts.length} posts
         </p>
 
@@ -112,12 +112,12 @@ export default function PostsPage({ posts }) {
             placeholder="Search"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-48 font-light px-3 py-2 border border-gray-300 rounded-full text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-500"
+            className="md:w-48 w-45 font-light px-3 md:py-2 py-1 border border-gray-300 rounded-full text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-500"
           />
         </div>
 
         {/* 🏷 카테고리 필터 */}
-        <div className="flex gap-4 mb-10 justify-center flex-wrap">
+        <div className="flex gap-4 mb-10 justify-center flex-wrap md:text-base text-xs">
           {categories.map((category) => (
             <button
               key={category}
@@ -134,25 +134,23 @@ export default function PostsPage({ posts }) {
         </div>
 
         {/* 📋 글 리스트 */}
-        <ul className="space-y-1 !pl-0 text-left">
+        <ul className="md:space-y-1 space-y-0 !pl-0 text-left">
           {visiblePosts.map((post) => {
-            console.log("🟡 미리보기 확인:", post.title, post.contentPreview); // ✅ 디버깅용 로그
-
             return (
               <li key={post.id}>
                 <Link href={`/posts/${post.slug}`} className="block">
                   <div className="flex gap-4 items-start text-left p-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 cursor-pointer">
                     <div className="flex-1">
-                      <p className="text-[18px] text-gray-800 mb-2">
+                      <p className="md:text-[18px] text-md text-gray-800 mb-2">
                         {post.title}
                       </p>
 
                       {/* ✅ 본문 미리보기 3줄 */}
-                      <p className="text-gray-800 text-sm font-light leading-5 line-clamp-3 break-words break-all overflow-hidden max-w-full">
+                      <p className="text-gray-800 md:text-sm text-xs font-light leading-5 line-clamp-3 break-words break-all overflow-hidden max-w-full">
                         {post.description}
                       </p>
 
-                      <div className="mt-2 flex justify-between text-sm text-gray-400 font-light">
+                      <div className="mt-2 flex justify-between md:text-sm text-xs text-gray-400 font-light">
                         <span>{post.date}</span>
                         <span>{post.category}</span>
                       </div>

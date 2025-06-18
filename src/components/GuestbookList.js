@@ -22,6 +22,7 @@ export default function GuestbookList({ setMessageCount }) {
   const [messages, setMessages] = useState([]);
   const [toast, setToast] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
+  const [chunkSize, setChunkSize] = useState(2); // ✅ 반응형 슬라이드 개수 설정
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
@@ -34,6 +35,17 @@ export default function GuestbookList({ setMessageCount }) {
     });
     return () => unsubscribe();
   }, [setMessageCount]);
+
+  // ✅ 모바일일 땐 chunkSize를 1로 설정
+  useEffect(() => {
+    const updateChunkSize = () => {
+      setChunkSize(window.innerWidth < 768 ? 1 : 2);
+    };
+
+    updateChunkSize(); // 초기 설정
+    window.addEventListener("resize", updateChunkSize);
+    return () => window.removeEventListener("resize", updateChunkSize);
+  }, []);
 
   useEffect(() => {
     if (toast) {
@@ -66,7 +78,8 @@ export default function GuestbookList({ setMessageCount }) {
     return result;
   };
 
-  const totalSlides = Math.ceil(messages.length / 2);
+  const chunks = chunkArray(messages, chunkSize);
+  const totalSlides = Math.ceil(messages.length / chunkSize);
 
   return (
     <div className="w-full px-4 mt-12 max-w-screen-sm mx-auto relative">
@@ -75,7 +88,7 @@ export default function GuestbookList({ setMessageCount }) {
         <button
           ref={prevRef}
           disabled={activeIndex === 0}
-          className={`!text-2xl px-2 transition ${
+          className={`md:!text-2xl !text-lg px-2 transition ${
             activeIndex === 0
               ? "text-gray-300 cursor-not-allowed opacity-50"
               : "text-gray-500 hover:text-black"
@@ -86,7 +99,7 @@ export default function GuestbookList({ setMessageCount }) {
         <button
           ref={nextRef}
           disabled={activeIndex === totalSlides - 1}
-          className={`!text-2xl px-2 transition ${
+          className={`md:!text-2xl !text-lg px-2 transition ${
             activeIndex === totalSlides - 1
               ? "text-gray-300 cursor-not-allowed opacity-50"
               : "text-gray-500 hover:text-black"
@@ -113,7 +126,7 @@ export default function GuestbookList({ setMessageCount }) {
         }}
         modules={[Pagination, Navigation]}
       >
-        {chunkArray(messages, 2).map((chunk, idx) => (
+        {chunks.map((chunk, idx) => (
           <SwiperSlide key={idx}>
             <div className="flex gap-4">
               {chunk.map((msg) => (
@@ -140,7 +153,7 @@ export default function GuestbookList({ setMessageCount }) {
                     {msg.message}
                   </p>
 
-                  <div className="text-[11px] text-neutral-400 font-light mt-4">
+                  <div className="text-[11px] text-neutral-400 font-light mt-4 mb-2">
                     {msg.createdAt?.toDate
                       ? (() => {
                           const date = msg.createdAt.toDate();
@@ -167,7 +180,7 @@ export default function GuestbookList({ setMessageCount }) {
       </Swiper>
 
       {/* ⚪ 하단 점(dot) 표시 */}
-      <div className="custom-pagination mt-4 flex justify-center space-x-2"></div>
+      <div className="custom-pagination mt-4 hidden md:flex justify-center space-x-2"></div>
 
       {/* ✅ 토스트 알림 */}
       {toast && (

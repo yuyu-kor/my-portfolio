@@ -29,23 +29,23 @@ export default function GuestbookForm() {
     <div className="w-full py-1 flex justify-center">
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-sm bg-white border border-neutral-200 rounded-lg shadow-sm p-3 space-y-2"
+        className="w-full md:max-w-sm max-w-[320px] bg-white border border-neutral-200 rounded-lg shadow-sm p-3 space-y-2"
       >
         {/* 닉네임 + 비밀번호 */}
-        <div className="flex gap-2">
+        <div className="flex flex-col md:flex-row gap-2">
           <input
             type="text"
             value={nickname}
             onChange={(e) => setNickname(e.target.value)}
             placeholder="닉네임(선택)"
-            className="font-light bg-neutral-100 px-3 py-1.5 rounded text-xs placeholder:text-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-300"
+            className="bg-neutral-100 px-3 py-1.5 rounded text-xs placeholder:text-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-300 font-light w-full md:w-auto"
           />
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="비밀번호"
-            className="flex-1 w-[90px] bg-neutral-100 px-3 py-1.5 rounded text-xs placeholder:text-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-300 font-light"
+            className="bg-neutral-100 px-3 py-1.5 rounded text-xs placeholder:text-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-300 font-light w-full md:flex-1"
             required
           />
         </div>
@@ -64,7 +64,7 @@ export default function GuestbookForm() {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="px-3 py-1 bg-neutral-900 text-white text-xs font-medium rounded hover:bg-neutral-800 transition"
+            className="px-3 py-1 bg-neutral-900 text-white text-xs rounded hover:bg-neutral-800 transition"
           >
             등록
           </button>

@@ -52,10 +52,13 @@ export default function Home({
           alt="썸네일"
           width={48}
           height={48}
-          className="w-13 h-13 rounded-full object-contain bg-gray-100 p-1"
+          className="w-10 h-10 md:w-13 md:h-13 rounded-full object-contain bg-gray-100 p-1"
         />
-        <p className="m-0 text-gray-800 text-[18px]">{post.title}</p>
-        <p className="text-sm text-gray-400 font-light m-0">{post.date}</p>
+
+        <p className="m-0 text-gray-800 md:text-[18px] text-sm">{post.title}</p>
+        <p className="md:text-sm text-[10px] shrink-0 text-gray-400 font-light m-0">
+          {post.date}
+        </p>
       </div>
     </Link>
   );
@@ -69,7 +72,7 @@ export default function Home({
       <Banner />
       <div>
         {/* Recent Posts */}
-        <div className="mb-4 p-2 text-xl w-fit border !border-gray-900 text-gray-700">
+        <div className="mb-4 p-2 md:text-xl text-sm w-fit border !border-gray-900 text-gray-700">
           Recent Posts
         </div>
         {recentPosts.map((post) => (
@@ -77,7 +80,7 @@ export default function Home({
         ))}
 
         {/* Case Study */}
-        <div className="mb-4 p-2 text-xl w-fit border !border-zinc-700 text-white bg-zinc-700 mt-5">
+        <div className="mb-4 p-2 md:text-xl text-sm w-fit border !border-zinc-700 text-white bg-zinc-700 mt-5">
           Case Study
         </div>
         {marketingPosts.map((post) => (
@@ -85,7 +88,7 @@ export default function Home({
         ))}
 
         {/* LIFE */}
-        <div className="mb-4 p-2 text-xl w-fit border !border-zinc-700 text-white bg-zinc-700 mt-5">
+        <div className="mb-4 p-2 md:text-xl text-sm w-fit border !border-zinc-700 text-white bg-zinc-700 mt-5">
           LIFE
         </div>
         {experiencePosts.map((post) => (
