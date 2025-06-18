@@ -21,13 +21,13 @@
 
 ## 🛠️ 사용 기술 스택
 
-| 분야 | 스택 |
-|------|------|
-| Framework | Next.js (Pages Router) |
-| Styling | Tailwind CSS, GmarketSans Custom Font |
-| 데이터 관리 | **Notion API**, Firebase Firestore |
-| 인터랙션 | Intersection Observer, Custom Hook (`useScrollFadeIn`, `useTypingEffect`) |
-| 배포 | Vercel |
+| 분야        | 스택                                                                      |
+| ----------- | ------------------------------------------------------------------------- |
+| Framework   | Next.js (Pages Router)                                                    |
+| Styling     | Tailwind CSS, GmarketSans Custom Font                                     |
+| 데이터 관리 | **Notion API**, Firebase Firestore                                        |
+| 인터랙션    | Intersection Observer, Custom Hook (`useScrollFadeIn`, `useTypingEffect`) |
+| 배포        | Vercel                                                                    |
 
 ---
 
@@ -48,7 +48,7 @@
 
 ### 📄 Posts
 
-- **Notion으로 작성한 글을 렌더링**  
+- **Notion으로 작성한 글을 렌더링**
 - 카테고리 필터 / 키워드 실시간 검색 / 무한 스크롤
 - `IntersectionObserver`로 자연스러운 Lazy Load 처리
 
@@ -65,9 +65,9 @@
 ## 📁 프로젝트 구조
 
 ```bash
-.
+
 ├── components/             # 공통 UI 컴포넌트 (Header, Footer, Banner 등)
-├── hooks/                 
+├── hooks/
 │   └── animation/TypingText.js
 ├── lib/
 │   ├── firebase.js         # Firebase 초기화 및 Firestore export
@@ -84,9 +84,12 @@
 └── styles/
     └── globals.css         # Tailwind 및 커스텀 스타일
 
+```
+
 ---
 
 🔮 향후 업데이트 예정
+
 - 블로그 댓글 기능 추가 (Firebase + Form validation)
 - 테마 토글 기능 (다크모드 / 라이트모드)
 - 모바일 반응형 개선
@@ -98,3 +101,7 @@
 👩‍💻 만든 사람
 이유진 (@yuyu-kor)
 피드백과 응원은 언제든 환영합니다!🌱
+
+```
+
+```
