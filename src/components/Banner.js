@@ -4,7 +4,7 @@ import TypingText from "@/hooks/animation/TypingText";
 export default function () {
   return (
     <div className="relative md:mt-3 mt-10 md:mb-5 mb-17">
-      <div className="flex items-center justify-between gap-10 font-light">
+      <div className="flex md:items-center items-start justify-between md:gap-10 gap-3 font-light md:flex-row flex-col">
         {/* 타이핑 텍스트 */}
         <div className="flex-1 min-w-[300px] z-10">
           <TypingText />
@@ -21,7 +21,7 @@ export default function () {
         </div>
 
         {/* 세로 링크 정렬 */}
-        <div className="flex flex-col items-end gap-3 font-light text-gray-600 z-10 md:-translate-x-20 -translate-x-18">
+        <div className="flex md:!flex-col flex-row items-end gap-3 font-light md:text-base text-lg text-gray-600 z-10 md:-translate-x-20">
           {[
             { label: "blog", href: "https://yuyu0629.tistory.com/" },
             { label: "github", href: "https://github.com/yuyu-kor" },
@@ -43,7 +43,7 @@ export default function () {
       </div>
 
       {/* 연락처 정보 */}
-      <div className="md:-translate-y-20 translate-y-5">
+      <div className="md:-translate-y-20 translate-y-7">
         <p className="font-light md:text-sm text-xs !mb-1">
           <span className="font-medium">Email.</span> yjlee462611@gmail.com
         </p>

@@ -11,19 +11,14 @@ const experience = [
     role: "콘텐츠 기획 및 B2B 온·오프라인 홍보",
   },
   {
-    date: "2025.08 - 2025.09",
+    date: "2025.07 - 2025.09",
     company: "데이터 리터러시 학습",
     role: "GA4, SQL, Excel을 기반으로 실전 데이터 분석 스킬 및 마케팅 Case Study 수행",
   },
   {
-    date: "2025.07 - 2025.07",
-    company: "디지털 디자인 툴 학습",
-    role: "Figma 및 AI 기반 디자인 툴을 활용해 포스터·웹디자인 등 다양한 콘텐츠 제작 실습",
-  },
-  {
     date: "2025.02 - 2025.06",
     company: "프론트엔드 독학 및 스터디 참여",
-    role: "HTML/CSS, JS, React.js, Next.js, Firebase 실습 및 팀 프로젝트 수행",
+    role: "HTML/CSS, JavaScript, React.js, Next.js, Firebase, Figma 실습 및 팀 프로젝트 수행",
   },
   {
     date: "2023.12 - 2024.02",
@@ -137,20 +132,20 @@ export default function About() {
           {/* 수직 라인 위치는 데스크탑 기준 유지 */}
           <div className="absolute left-[174px] top-0 bottom-4 w-[1px] bg-zinc-300 hidden md:block" />
 
-          <div className="flex flex-col space-y-2 md:!space-y-6">
+          <div className="flex flex-col space-y-2 md:!space-y-3">
             {experience.map((exp, i) => (
               <div
                 key={i}
                 className="grid grid-cols-[100px_20px_1fr] md:grid-cols-[140px_20px_1fr] items-start gap-3 md:gap-4"
               >
-                <p className="text-xs md:text-sm font-light text-gray-500 text-center pt-1 whitespace-nowrap">
+                <p className="text-xs md:text-sm font-light text-gray-500 text-center pt-0.5 whitespace-nowrap">
                   {exp.date}
                 </p>
                 <div className="flex justify-center relative">
                   <div className="w-2 h-2 rounded-full z-10 mt-1" />
                 </div>
                 <div>
-                  <p className="text-sm md:text-base font-medium text-zinc-800 mb-0.5 md:!mb-7 leading-tight">
+                  <p className="text-sm md:text-base font-medium text-zinc-800 mb-0.5 md:!mb-5 leading-tight">
                     {exp.company}
                   </p>
                   <p className="text-xs md:text-sm font-light text-zinc-600 leading-snug">
@@ -159,58 +154,6 @@ export default function About() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ✅ Certificate Section with Animation */}
-      <section
-        ref={certificateRef}
-        className={`md:!pt-20 !pt-15 max-w-5xl mx-auto flex flex-col items-center transition-all duration-700 ease-in-out transform ${
-          certificateVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-8"
-        }`}
-      >
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">
-          Certificate
-        </h2>
-
-        <div className="mt-6 md:!mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full">
-          {/* JLPT */}
-          <div className="rounded-2xl border border-gray-200 shadow-sm p-3 md:p-4 hover:shadow-md transition-all flex flex-col items-center text-center">
-            <img
-              src="/jlpt.png"
-              alt="JLPT N2 자격증"
-              className="w-full h-auto object-contain rounded-lg mb-2 md:mb-3 max-h-[160px] md:max-h-[220px]"
-            />
-            <p className="text-xs md:text-sm text-gray-700">
-              JLPT N2 (2022.12)
-            </p>
-          </div>
-
-          {/* React 스터디 수료증 */}
-          <div className="rounded-2xl border border-gray-200 shadow-sm p-3 md:p-4 hover:shadow-md transition-all flex flex-col items-center text-center">
-            <img
-              src="/coding.png"
-              alt="React 스터디 수료증"
-              className="w-full h-auto object-contain rounded-lg mb-2 md:mb-3 max-h-[160px] md:max-h-[220px]"
-            />
-            <p className="text-xs md:text-sm text-gray-700">
-              React 스터디 수료증 (2025.06)
-            </p>
-          </div>
-
-          {/* GA4 인증 */}
-          <div className="rounded-2xl border border-gray-200 shadow-sm p-3 md:p-4 hover:shadow-md transition-all flex flex-col items-center text-center">
-            <img
-              src="/ga4.png"
-              alt="GA4 수료증"
-              className="w-full h-auto object-contain rounded-lg mb-2 md:mb-3 max-h-[160px] md:max-h-[220px]"
-            />
-            <p className="text-xs md:text-sm text-gray-700">
-              GA4 실무 인증 (2025.06)
-            </p>
           </div>
         </div>
       </section>
