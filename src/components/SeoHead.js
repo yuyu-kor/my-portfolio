@@ -1,8 +1,8 @@
 import Head from "next/head";
 
 export default function SeoHead({
-  title = "이유진 | 마케터 & 프론트엔드 개발자",
-  description = "GA4, Firebase, Next.js 기반 프로젝트를 담은 마케터 이유진의 포트폴리오입니다.",
+  title = "yuyu | 취미로 개발하는 마케터",
+  description = "취미로 개발하는 이유진(yuyu)의 마케터 포트폴리오입니다.",
   image = "/og-image.png",
   url = "https://my-portfolio-lovat-nine-85.vercel.app/",
 }) {
@@ -12,7 +12,7 @@ export default function SeoHead({
       <meta name="description" content={description} />
       <meta
         name="keywords"
-        content="신입 마케터, 프론트엔드, 포트폴리오, 이유진, yuyu, GA4, Firebase, React, Next.js, 프로젝트"
+        content="마케터, 프론트엔드, 포트폴리오, 이유진, yuyu, GA4, Firebase, Next.js"
       />
       <meta name="author" content="이유진" />
 
