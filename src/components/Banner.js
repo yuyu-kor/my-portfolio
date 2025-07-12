@@ -24,8 +24,12 @@ export default function () {
         <div className="flex md:!flex-col flex-row items-end gap-3 font-light md:text-base text-lg text-gray-600 z-10 md:-translate-x-20">
           {[
             { label: "blog", href: "https://yuyu0629.tistory.com/" },
+
+            {
+              label: "tiktok",
+              href: "https://www.tiktok.com/@yuzzang_?_t=ZS-8xxeoGZdLkH&_r=1",
+            },
             { label: "github", href: "https://github.com/yuyu-kor" },
-            { label: "resume", href: "" },
             { label: "youtube", href: "https://www.youtube.com/@yuzzang9" },
           ].map((link) => (
             <a
@@ -50,6 +54,15 @@ export default function () {
         <p className="font-light md:text-sm text-xs">
           <span className="font-medium">Residence.</span> Seoul, South Korea
         </p>
+      </div>
+
+      {/* 모바일 프로필 */}
+      <div className="md:hidden block">
+        <img
+          src="/banner_img_pixel.png"
+          alt="프로필사진"
+          className="w-[160px] absolute top-0 left-65 -translate-y-5"
+        />
       </div>
     </div>
   );

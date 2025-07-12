@@ -11,7 +11,7 @@ const experience = [
     role: "콘텐츠 기획 및 B2B 온·오프라인 홍보",
   },
   {
-    date: "2025.07 - 2025.09",
+    date: "2025.07 - 2025.08",
     company: "데이터 리터러시 학습",
     role: "GA4, SQL, Excel을 기반으로 실전 데이터 분석 스킬 및 마케팅 Case Study 수행",
   },
@@ -87,11 +87,11 @@ export default function About() {
       <Banner />
 
       {/* ✅ Profile Section */}
-      <div className="flex items-center justify-center border-b border-zinc-300 md:mb-5 mb-0 md:mt-5 !mt-20">
+      <div className="flex items-center justify-center md:mb-5 mb-0 md:mt-5 !mt-20">
         <img
-          src="/profile_sub2.png"
+          src="/about_img_pixel.png"
           alt="프로필사진"
-          className="w-[180px] md:w-[380px]"
+          className="w-[150px] md:w-[380px]"
         />
         <div className="md:-translate-y-13 -translate-y-3">
           <div
@@ -102,7 +102,7 @@ export default function About() {
                 : "opacity-0 translate-y-8"
             } -translate-y-10`}
           >
-            <span className="h-fit px-2 py-1 bg-blue-100 text-blue-900 md:text-sm text-[10px] font-bold rounded-full shadow-sm inline-block mb-3">
+            <span className="h-fit px-2 py-1 bg-amber-100 text-amber-900 md:text-sm text-[10px] font-bold rounded-full shadow-sm inline-block mb-3">
               ENTJ
             </span>
             <p className="md:text-xl text-sm">Yujin Lee (yuyu)</p>
