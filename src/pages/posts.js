@@ -58,7 +58,7 @@ export default function PostsPage({ posts }) {
   const [visibleCount, setVisibleCount] = useState(6);
   const loaderRef = useRef(null);
 
-  const categories = ["All", "Dev", "Video", "Marketing", "Experience"];
+  const categories = ["All", "Dev", "Marketing", "Experience"];
 
   const filteredPosts = useMemo(() => {
     return posts.filter((post) => {

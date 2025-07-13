@@ -67,7 +67,7 @@ export default function Home({
     <>
       <SeoHead
         title="yuyu's portfolio"
-        description="마케터이자 프론트엔드 개발자인 이유진(yuyu)의 이력과 학습 여정을 소개합니다."
+        description="개발이 가능한 마케터 이유진(yuyu)의 이력과 학습 여정을 소개합니다."
       />
       <Banner />
       <div>
@@ -79,9 +79,9 @@ export default function Home({
           <PostItem key={post.slug} post={post} />
         ))}
 
-        {/* Case Study */}
+        {/* Marketing */}
         <div className="mb-4 p-2 md:text-xl text-sm w-fit border !border-zinc-700 text-white bg-zinc-700 mt-5">
-          Case Study
+          Marketing
         </div>
         {marketingPosts.map((post) => (
           <PostItem key={post.slug} post={post} />
