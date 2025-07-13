@@ -61,7 +61,7 @@ export default function () {
         <img
           src="/banner_img_pixel.png"
           alt="프로필사진"
-          className="w-[160px] absolute top-0 left-65 -translate-y-5"
+          className="w-[130px] absolute top-0 left-55 -translate-y-5"
         />
       </div>
     </div>

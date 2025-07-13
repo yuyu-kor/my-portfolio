@@ -36,7 +36,7 @@ const TypingText = () => {
   const text1 = useTypingEffect([
     "트렌드에 민감한",
     "성과에 집착하는",
-    "분석을 좋아하는",
+    "개발이 가능한",
     "컨텐츠가 끊임없는",
   ]);
   const text2 = useTypingEffect(["이유진", "yuyu"]);
@@ -49,7 +49,7 @@ const TypingText = () => {
       <span className="animate-blink">|</span>
       <br />
       <span className="whitespace-nowrap">
-        신입마케터 <strong>{text2}</strong>
+        마케터 <strong>{text2}</strong>
         <span className="animate-blink">|</span>입니다.
       </span>
     </div>
