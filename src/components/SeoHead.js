@@ -3,7 +3,7 @@ import Head from "next/head";
 export default function SeoHead({
   title = "yuyu | 취미로 개발하는 마케터",
   description = "개발이 가능한 마케터 이유진(yuyu)의 마케터 포트폴리오 페이지입니다.",
-  image = "/og-image.png",
+  image = "/new-og-image.png",
   url = "https://my-portfolio-lovat-nine-85.vercel.app/",
 }) {
   return (
@@ -12,7 +12,7 @@ export default function SeoHead({
       <meta name="description" content={description} />
       <meta
         name="keywords"
-        content="마케터, 프론트엔드, 포트폴리오, 이유진, yuyu, GA4, Firebase, Next.js"
+        content="마케터,프론트엔드,포트폴리오,이유진,yuyu,GA4,Firebase,Next.js, 개발"
       />
       <meta name="author" content="이유진" />
 
@@ -21,11 +21,7 @@ export default function SeoHead({
       <meta property="og:description" content={description} />
       <meta
         property="og:image"
-        content={
-          image.startsWith("http")
-            ? image
-            : `https://my-portfolio-lovat-nine-85.vercel.app${image}`
-        }
+        content="https://my-portfolio-lovat-nine-85.vercel.app/new-og-image.png"
       />
 
       <meta property="og:url" content={url} />
