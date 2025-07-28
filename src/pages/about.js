@@ -12,8 +12,8 @@ const experience = [
   },
   {
     date: "2025.07 - 2025.08",
-    company: "데이터 리터러시 학습",
-    role: "GA4, SQL, Excel을 기반으로 실전 데이터 분석 스킬 및 마케팅 Case Study 수행",
+    company: "GA4 중심 실무 도구 학습",
+    role: "GA4를 중심으로 Firebase 앱 마케팅, BigQuery, Looker Studio, Google Ads 등 마케팅 실무 도구를 직접 익히고 활용법을 배움",
   },
   {
     date: "2025.02 - 2025.06",
@@ -23,7 +23,7 @@ const experience = [
   {
     date: "2023.12 - 2024.02",
     company: "마케팅 대행사 (마케팅팀)",
-    role: "네이버 검색광고 운영 및 성과 리포트 작성",
+    role: "다양한 업종의 클라이언트를 대상으로 네이버 검색광고를 직접 제안 및 운영하고, 주간·월간 단위의 성과 리포트를 작성해 전달",
   },
   {
     date: "2022.06 - 2022.12",
