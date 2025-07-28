@@ -2,7 +2,7 @@ import Head from "next/head";
 
 export default function SeoHead({
   title = "yuyu | 취미로 개발하는 마케터",
-  description = "취미로 개발하는 이유진(yuyu)의 마케터 포트폴리오입니다.",
+  description = "개발이 가능한 마케터 이유진(yuyu)의 마케터 포트폴리오 페이지입니다.",
   image = "/og-image.png",
   url = "https://my-portfolio-lovat-nine-85.vercel.app/",
 }) {
@@ -21,8 +21,13 @@ export default function SeoHead({
       <meta property="og:description" content={description} />
       <meta
         property="og:image"
-        content="https://my-portfolio-lovat-nine-85.vercel.app/og-image.png"
+        content={
+          image.startsWith("http")
+            ? image
+            : `https://my-portfolio-lovat-nine-85.vercel.app${image}`
+        }
       />
+
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
 
@@ -32,7 +37,11 @@ export default function SeoHead({
       <meta name="twitter:description" content={description} />
       <meta
         name="twitter:image"
-        content="https://my-portfolio-lovat-nine-85.vercel.app/og-image.png"
+        content={
+          image.startsWith("http")
+            ? image
+            : `https://my-portfolio-lovat-nine-85.vercel.app${image}`
+        }
       />
 
       <link rel="icon" type="image/svg+xml" href="/favicon_yu.svg" />

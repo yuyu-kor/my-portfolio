@@ -81,9 +81,10 @@ export default function About() {
   return (
     <>
       <SeoHead
-        title="yuyu's portfolio"
-        description="마케터이자 프론트엔드 개발자인 이유진(yuyu)의 이력과 학습 여정을 소개합니다."
+        title="yuyu | About"
+        description="개발이 가능한 마케터 이유진의 자기소개 페이지입니다."
       />
+
       <Banner />
 
       {/* ✅ Profile Section */}

@@ -9,9 +9,10 @@ export default function Guestbook() {
   return (
     <>
       <SeoHead
-        title="About | 이유진 포트폴리오"
-        description="마케터이자 프론트엔드 개발자인 이유진(yuyu)의 이력과 학습 여정을 소개합니다."
+        title="yuyu | Guestbook"
+        description="개발이 가능한 마케터 이유진의 방명록 페이지입니다."
       />
+
       <main className="mt-20">
         <div>
           <span className="text-3xl text-center block">👋👋👋</span>

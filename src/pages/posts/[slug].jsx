@@ -73,7 +73,7 @@ export default function PostPage({ recordMap, pageData }) {
         title={pageData.title}
         description={pageData.description}
         image={pageData.thumbnail}
-        url={`https://yourdomain.com/posts/${encodeURIComponent(
+        url={`https://my-portfolio-lovat-nine-85.vercel.app/posts/${encodeURIComponent(
           pageData.title
         )}`} // 원하면 slug로 변경 가능
       />

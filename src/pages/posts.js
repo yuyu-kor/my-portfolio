@@ -93,8 +93,8 @@ export default function PostsPage({ posts }) {
   return (
     <>
       <SeoHead
-        title="Posts | yuyu 포트폴리오"
-        description="마케터이자 프론트엔드 개발자인 이유진(yuyu)의 블로그 글 목록입니다."
+        title="yuyu | Posts"
+        description="개발이 가능한 마케터 이유진의 블로그 글 목록입니다."
       />
 
       <div className="w-full max-w-[720px] mx-auto mt-14 text-center">
