@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 const experience = [
   {
-    date: "2024.03 - NOW",
+    date: "2024.03 - 2024.08",
     company: "안과 (홍보팀)",
     role: "콘텐츠 기획 및 B2B 온·오프라인 홍보",
   },
@@ -32,8 +32,8 @@ const experience = [
   },
   {
     date: "2020.11 - 2022.11",
-    company: "엔터테인먼트 영상편집 & 게임 방송 프리랜서",
-    role: "프리미어프로 활용 간단한 영상 콘텐츠 제작 및 스트리밍 운영",
+    company: "MCN 개인 방송 채널 운영",
+    role: "라이브 스트리밍 기획·운영 및 커뮤니티 성장 관리",
   },
 ];
 
